@@ -16,8 +16,6 @@ import java.util.stream.Collectors;
 
 public class BagOfWords {
 
-  int lineNo;
-
   private File dataFile = new File("./src/edu/shafiFgcu/messages.txt");
 
   private Map<String, Integer> bag = new HashMap<>();
@@ -25,7 +23,6 @@ public class BagOfWords {
 
 
   protected void loadFile() throws IOException {
-    String line = null;
 
     try {
       BufferedReader reader = new BufferedReader(new FileReader(dataFile));
@@ -66,22 +63,7 @@ public class BagOfWords {
 
   }
 
-  protected void printWordsByValue() {
-    /** print Map of words sorted by values*/
-    System.out.println(lineNo);
-    for (Map.Entry<String, Integer> entry : allWordByKey.entrySet()) {
-      int temp = entry.getValue();
-      double temp1 = temp;
-      double confidence = (temp1) / (lineNo);
 
-      System.out.println(
-          "[" + entry.getKey() + "] " + entry.getValue() + " The confidence level is "
-              + confidence);
-    }
-
-    System.out.println();
-
-  }
 
   protected void compare(String input) {
     double totalOccourance = 0;
@@ -89,7 +71,6 @@ public class BagOfWords {
     for (Map.Entry<String, Integer> entry : allWordByKey.entrySet()) {
       String pairsOfWords = entry.getKey();
 
-      int i = input.indexOf(' ');
       try {
 
         String initial = pairsOfWords.substring(0, input.length());
