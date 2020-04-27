@@ -39,7 +39,6 @@ public class BagOfWords {
       io.printStackTrace();
     }
     buildBag();
-    System.out.println(lineNo);
 
   }
 
@@ -99,7 +98,6 @@ public class BagOfWords {
           int valueOfOccours = entry.getValue();
           totalOccourance += valueOfOccours;
 
-
         } else {
 
         }
@@ -122,17 +120,9 @@ public class BagOfWords {
 
           if (support > .65) {
             System.out
-                .println("Your next word is... " + entry.getKey().substring(input.length() + 1));
+                .println("Your next word might be " + entry.getKey().substring(input.length() + 1));
             found = true;
-            if (found) {
-              System.out.println("Your next word might be 'the' ");
-              System.out.println("Your next word might be 'this' ");
-            }
-            else {
-              System.out.println("Your next word might be 'the'.");
-              System.out.println("Your next word might be 'this' .");
-              System.out.println("Your next word might be 'of'.");
-            }
+
           }
         } else {
 
@@ -142,6 +132,14 @@ public class BagOfWords {
 
       }
 
+    }
+    if (found) {
+      System.out.println("Your next word might be 'the' ");
+      System.out.println("Your next word might be 'this' ");
+    } else {
+      System.out.println("Your next word might be 'the'.");
+      System.out.println("Your next word might be 'this' .");
+      System.out.println("Your next word might be 'of'.");
     }
 
   }
