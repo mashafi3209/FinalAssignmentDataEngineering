@@ -28,7 +28,6 @@ public class BagOfWords {
       BufferedReader reader = new BufferedReader(new FileReader(dataFile));
       while ((line = reader.readLine()) != null) {
         createTreeMap(line);
-        lineNo = lineNo + 1;
 
       }
       reader.close();
